@@ -112,27 +112,27 @@ GLuint loadTexture(Image* image) {
 
 void initRendering() {
 	//se cargan las texturas al escenario las imagenes son en formato bmp
-	Image* lado1 = loadBMP("6.bmp");
+	Image* lado1 = loadBMP("4.bmp");
 	text1 = loadTexture(lado1);
 	delete lado1;
 
-	Image* lado2 = loadBMP("6.bmp");
+	Image* lado2 = loadBMP("4.bmp");
 	text2 = loadTexture(lado2);
 	delete lado2;
 
-	Image* lado3 = loadBMP("6.bmp");
+	Image* lado3 = loadBMP("4.bmp");
 	text3 = loadTexture(lado3);
 	delete lado3;
 
-	Image* lado4 = loadBMP("6.bmp");
+	Image* lado4 = loadBMP("4.bmp");
 	text4 = loadTexture(lado4);
 	delete lado4;
 
-	Image* lado5 = loadBMP("6.bmp");
+	Image* lado5 = loadBMP("4.bmp");
 	text5 = loadTexture(lado5);
 	delete lado5;
 
-	Image* lado6 = loadBMP("6.bmp");
+	Image* lado6 = loadBMP("4.bmp");
 	text6 = loadTexture(lado6);
 	delete lado6;
 }
@@ -151,6 +151,7 @@ void dibujaCubo(){
   //LADO FRONTAL: lado multicolor
 cargarTextura(text1);
   glBegin(GL_POLYGON);
+	glColor3f(0.7, 0.5, 0.8);
 	  glTexCoord2f(0.0f, 0.0f);  glVertex3f(  0.5, -0.5, -0.5 );      // P1 es rojo
 	  glTexCoord2f(1.0f, 0.0f);  glVertex3f(  0.5,  0.5, -0.5 );      // P2 es verde
 	  glTexCoord2f(1.0f, 1.0f);  glVertex3f( -0.5,  0.5, -0.5 );      // P3 es azul
@@ -338,8 +339,8 @@ void dibujoParedes(){
 		
 			glPushMatrix();
 			glTranslated(paredLadox[i], paredLadoY[i], 0);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 
@@ -347,8 +348,8 @@ void dibujoParedes(){
      for (int i = 0; i < 20; i++) {
 			glPushMatrix();
 			glTranslated(10, 10, -i);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 
@@ -356,8 +357,8 @@ void dibujoParedes(){
      for (int i = 0; i < 20; i++) {
 			glPushMatrix();
 			glTranslated(-10, 10, -i);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 
@@ -365,8 +366,8 @@ void dibujoParedes(){
      for (int i = 0; i < 20; i++) {
 			glPushMatrix();
 			glTranslated(-10, -10, -i);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 
@@ -374,8 +375,8 @@ void dibujoParedes(){
      for (int i = 0; i < 20; i++) {
 			glPushMatrix();
 			glTranslated(10, -10, -i);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 
@@ -383,8 +384,8 @@ void dibujoParedes(){
     for (int i = 0; i < sizeof(paredLadox) / sizeof(paredLadox[0]); i++) {
 			glPushMatrix();
 			glTranslated(paredLadox[i], paredLadoY[i], -20);
-			dibujaCubo(0.3, 0.7, 0.9);
-			//dibujaCubo();
+			//dibujaCubo(0.3, 0.7, 0.9);
+			dibujaCubo();
 			glPopMatrix();
 		}
 }
@@ -1398,7 +1399,7 @@ void display(void) {
         for(itCola = listCola.begin(); itCola != listCola.end();itCola++){
             glPushMatrix();
 			glTranslated((*itCola)->getXCola(), (*itCola)->getYCola(),(*itCola)->getZCola());
-            dibujaCubo(1.0, 0.0, 0.047);;
+            dibujaCubo(1.0, 0.0, 0.047);
 			glPopMatrix();
         }
 
